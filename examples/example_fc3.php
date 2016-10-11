@@ -3,11 +3,11 @@
 require_once dirname(__FILE__) . '/../Phpmodbus/ModbusMaster.php';
 
 // Create Modbus object
-$modbus = new ModbusMaster("192.192.15.51", "UDP");
+$modbus = new ModbusMaster("127.0.0.1", "TCP");
 
 try {
     // FC 3
-    $recData = $modbus->readMultipleRegisters(0, 12288, 6);
+    $recData = $modbus->readMultipleRegisters(0, 0x40000, 6);
 }
 catch (Exception $e) {
     // Print error information if any
