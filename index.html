@@ -2,15 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Title of the document</title>
+<title>Test Modbus Realtime</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div id="value-1"></div>
-  <div id="value-2"></div>
-  <div id="value-3"></div>
 
+  <div style="width:600px">
+    <table class="table table-striped">
+      <tbody>
+        <tr><td>40001 :</td><td><span class="label label-success" id="value-1"></span></td></tr>
+        <tr><td>40002 :</td><td><span class="label label-success" id="value-2"></span></td></tr>
+        <tr><td>40003 :</td><td><span class="label label-success" id="value-3"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
     $(document).ready(function(){
         function getModbusData()
