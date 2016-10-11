@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+</head>
+
+<body>
+  <div id="value-1"></div>
+  <div id="value-2"></div>
+  <div id="value-3"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        function getModbusData()
+        {
+          var cUrl = window.location.protocol+'//'+window.location.host+'/phpmodbus';
+          $.ajax({
+              dataType: "json",
+              url: cUrl+'/examples/example_fc3.php',
+              type: 'GET',
+              success: function (data) {
+                  $("#value-1").html(data.irr1);
+                  $("#value-2").html(data.irr2);
+                  $("#value-3").html(data.irr3);
+              },
+              error: function () {
+              }
+          });
+        }
+        getModbusData();
+        setInterval(getModbusData,1000);
+    });
+  </script>
+</body>
+
+</html> 
